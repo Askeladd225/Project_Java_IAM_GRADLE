@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // BOM AWS SDK pour Java 2.x
+    implementation platform('software.amazon.awssdk:bom:2.41.19')
+
+    // Dépendance pour IAM
+    implementation 'software.amazon.awssdk:iam'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25) // OpenJDK 25
+    }
+}
